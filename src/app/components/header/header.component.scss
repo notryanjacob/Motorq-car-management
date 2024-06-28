@@ -1,0 +1,22 @@
+header{
+    background-color: #5f9ea0;
+  }
+  
+  .page-header h1 {
+    display: flex;
+    justify-content: center;
+     height: 60px;
+    /* Add margin between image and text */
+  }
+ 
+  .duration-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .btn.selected{
+    background-color: rgb(138, 135, 135);
+  }

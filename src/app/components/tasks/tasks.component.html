@@ -1,0 +1,10 @@
+<div class="wrap">
+<div *ngIf="showMoreButtonVisible" class="show-more" (click)="toggleShowMore()">
+    {{showMore ? 'Show less' : 'Show more'}}</div>
+</div>
+
+<div class="grid">
+    <app-task-item *ngFor="let task of visibleTasks" [task]="task">
+    </app-task-item>
+</div>
+<app-bar-chart></app-bar-chart>
