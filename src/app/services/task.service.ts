@@ -23,7 +23,17 @@ export class TaskService {
   getTasksAllTime(): Observable<Task[]>{
     return this.http.get<Task[]>(this.apiUrl+'/task-time/allTime');
   }
-  getTasksAsc() : Observable<Task[]>{
-    return this.http.get<Task[]>(this.apiUrl+'/durationa');
+  //unused tasks
+  getUnusedTasksToday(): Observable<Task[]>{
+    return this.http.get<Task[]>(this.apiUrl+'/unusedToday');
+  }
+  getUnusedTasksThisMonth(): Observable<Task[]>{
+    return this.http.get<Task[]>(this.apiUrl+'/task-time/unusedThisMonth');
+  }
+  getUnusedTasksThisYear(): Observable<Task[]>{
+    return this.http.get<Task[]>(this.apiUrl+'/task-time/unusedThisYear');
+  }
+  getUnusedTasksAllTime(): Observable<Task[]>{
+    return this.http.get<Task[]>(this.apiUrl+'/task-time/unusedAllTime');
   }
 }

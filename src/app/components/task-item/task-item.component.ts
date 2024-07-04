@@ -10,8 +10,8 @@ export class TaskItemComponent{
     @Input() task!: Task;
     
     formatText(title: string): string{
-      if(title.length>60){
-        return title.slice(0,35)+"..."+title.slice(title.length-25,title.length);
+      if(title.length>50){
+        return title.slice(0,25)+"..."+title.slice(title.length-25,title.length);
       }
       return title;
     }

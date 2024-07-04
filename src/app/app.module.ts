@@ -8,6 +8,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { TaskItemComponent } from './components/task-item/task-item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { UnusedItemsComponent } from './components/unused-items/unused-items.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,13 @@ import { BarChartComponent } from './components/bar-chart/bar-chart.component';
     HeaderComponent,
     TasksComponent,
     TaskItemComponent,
-    BarChartComponent,  ],
+    BarChartComponent,
+    UnusedItemsComponent,  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

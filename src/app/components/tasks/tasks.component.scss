@@ -10,9 +10,10 @@
 
 .show-more {
     background-color: cadetblue;
-    width: 130px;
+    width: 140px;
     color: #fff;
     border: none;
+    align-items:stretch;
     padding: 10px 20px;
     margin: 5px;
     margin-right: 20px;
@@ -22,3 +23,21 @@
     font-size: 15px;
     font-family: inherit;
 }
+
+
+.duration-buttons{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .btn.selected{
+    background-color: rgb(138, 135, 135);
+  }
+
+  .chart-items{
+    display: flex;
+    justify-content: space-evenly;
+  }

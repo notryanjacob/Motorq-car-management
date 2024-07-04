@@ -1,6 +1,7 @@
-import { Component, OnChanges } from '@angular/core';
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Task } from 'src/app/Task';
-import { DataService } from 'src/app/services/data.service';
 import { TaskService } from 'src/app/services/task.service';
 
 @Component({
@@ -8,47 +9,48 @@ import { TaskService } from 'src/app/services/task.service';
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.scss']
 })
-export class TasksComponent {
-    tasks: Task[] = [];
+export class TasksComponent implements OnInit{
+    tasks:Task[]=[];
     showMore = false;
     itemsPerRow = 4;
-    currentDurationBtn: string="Today";
+    selectedButton: string = 'Today';  
+    faAngleUp = faAngleUp;
+    faAngleDown = faAngleDown;
 
-    constructor(private taskService: TaskService,
-                private data: DataService
-    ){}
+    constructor(private taskService: TaskService,private cdr: ChangeDetectorRef){}
 
-    ngOnInit(): void{
-      this.data.currentDurationButton$.subscribe(currentButton=> 
-        {
-          this.currentDurationBtn = currentButton;
-          console.log(currentButton);
-        }
-      );
-      this.loadTasks(); 
+    ngOnInit(): void{      
+      this.loadTasks(this.selectedButton);
+    }
+    selectButton(button: string) {
+      this.selectedButton = button;
+      this.loadTasks(this.selectedButton);
     }
 
-    loadTasks(){
-      switch(this.currentDurationBtn){
-        case "Today":
-          this.taskService.getTasksToday().subscribe((tasks)=>this.tasks = tasks);
+    loadTasks(selectedDuration: string){
+      switch(selectedDuration){
+        case 'Today':
+          this.taskService.getTasksToday().subscribe((t)=>{
+            this.tasks=t;
+            this.cdr.detectChanges();
+          });
           break;
-        case "All Time":
-          this.taskService.getTasksAllTime().subscribe((tasks)=>this.tasks = tasks);
+        case 'All Time':
+          this.taskService.getTasksAllTime().subscribe((t)=>this.tasks=t);
           break;
-        case "This Month":
-          this.taskService.getTasksThisMonth().subscribe((tasks)=> this.tasks = tasks);
+        case 'This Month':
+          this.taskService.getTasksThisMonth().subscribe((t)=>this.tasks=t);
           break;
         case 'This Year':
-          this.taskService.getTasksThisYear().subscribe((t)=> this.tasks=t);
+          this.taskService.getTasksThisYear().subscribe((t)=>this.tasks=t);
           break;
         default:
-          this.taskService.getTasksToday().subscribe((t)=>this.tasks = t);
+          this.taskService.getTasksToday().subscribe((t)=>this.tasks=t);
+      
       }
     }
     
     toggleShowMore(){
-      // console.log(this.currentDurationBtn,this.tasks);
       this.showMore  = !this.showMore;
     }
 

@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import * as d3 from 'd3';
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../Task';
@@ -8,28 +8,25 @@ import { Task } from '../../Task';
   templateUrl: './bar-chart.component.html',
   styleUrls: ['./bar-chart.component.scss']
 })
-export class BarChartComponent implements OnInit {
-  data: Task[] = [];
+export class BarChartComponent implements OnInit, OnChanges{
+  @Input() data: Task[]=[];
 
   constructor(private el: ElementRef, private taskService: TaskService) { }
 
   ngOnInit(): void {
-    this.loadTasks();
+    // this.createChart();
   }
-
-  loadTasks(){  
-    this.taskService.getTasksToday().subscribe((tasks: Task[]): void =>{
-      this.data = tasks;
-      console.log('data loaded : ',this.data);
+  
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['data'] && changes['data'].currentValue) {
+      console.log('Data received in bar component:', this.data);
+      // Update your chart here
       this.createChart();
-    },
-    (error) => {
-      console.error('Error loading tasks ', error);
     }
-  );
   }
 
   private createChart(): void {
+    console.log('created chart, data:',this.data);
     const element = this.el.nativeElement;
     const data = this.data;
     const factor = 1; //1->seconds, 60->minutes

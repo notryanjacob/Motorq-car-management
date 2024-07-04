@@ -7,19 +7,7 @@ import { DataService } from 'src/app/services/data.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit{
-  isChecked: Boolean = false;
-  selectedButton: string = 'Today';  
-
+export class HeaderComponent{
   title: string = 'UPL App Productivity Tracker';
-  constructor( private dataService: DataService){ }
-  
-  ngOnInit(): void {
-      this.dataService.setCurrentDurationButton(this.selectButton.toString());
-  }
-
-  selectButton(button: string) {
-    this.selectedButton = button;
-  }
-
+  constructor(){ }
 }
