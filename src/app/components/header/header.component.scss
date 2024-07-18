@@ -2,10 +2,19 @@ header{
     background-color: #5f9ea0;
   }
   
+  .centered-header{
+    text-align: center;
+    margin: 0 auto;
+  }
   .page-header h1 {
-    display: flex;
-    justify-content: center;
+    display: inline-block;
+    // justify-content: center;
      height: 60px;
+     
     /* Add margin between image and text */
+  }
+  .logout{
+    float: right;
+    margin-right: 10px;
   }
  

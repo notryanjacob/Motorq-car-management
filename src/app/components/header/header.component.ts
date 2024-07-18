@@ -9,5 +9,12 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class HeaderComponent{
   title: string = 'UPL App Productivity Tracker';
-  constructor(){ }
+  constructor(private dataService: DataService){ }
+  isUserLoggedIn(): boolean{
+    if(localStorage.getItem('isLoggedIn')==='1') return true;
+    return false;
+  }
+  logout(): void{
+    this.dataService.logout();
+  }
 }

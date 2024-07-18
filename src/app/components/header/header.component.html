@@ -1,5 +1,7 @@
-<div class="page-header"><header>
+<div class="page-header">
+  <header class="centered-header">
     <h1 class="project-name">{{title}}</h1>
+    <button *ngIf="isUserLoggedIn()" class="btn logout" (click)="logout()">Logout</button>
   </header>
 </div>
 

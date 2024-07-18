@@ -1,17 +1,19 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  constructor() { }
+  constructor(private router: Router) { }
 
-  private durationButton = new BehaviorSubject<string>("Today");
-  currentDurationButton$ = this.durationButton.asObservable();
-
-  setCurrentDurationButton(durationBtn: string) {
-    this.durationButton.next(durationBtn);
+  getUserAccess():string{
+    let isUserLoggedIn = localStorage.getItem('isLoggedIn')||'';
+    return isUserLoggedIn;
   }
-
+  logout(): void{
+    localStorage.removeItem('isLoggedIn');
+    this.router.navigate(['/login'])
+  }
+ 
 }

@@ -10,6 +10,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { UnusedItemsComponent } from './components/unused-items/unused-items.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
+import { AddUrlComponent } from './components/add-url/add-url.component';
 
 @NgModule({
   declarations: [
@@ -18,12 +21,16 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     TasksComponent,
     TaskItemComponent,
     BarChartComponent,
-    UnusedItemsComponent,  ],
+    UnusedItemsComponent,
+    LoginComponent,
+    AddUrlComponent,
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

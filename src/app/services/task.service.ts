@@ -36,4 +36,8 @@ export class TaskService {
   getUnusedTasksAllTime(): Observable<Task[]>{
     return this.http.get<Task[]>(this.apiUrl+'/task-time/unusedAllTime');
   }
+
+  addTrackableUrl(newTrackableUrl: String): Observable<String>{
+    return this.http.post<String>(this.apiUrl+'/trackable-url', newTrackableUrl);
+  }
 }

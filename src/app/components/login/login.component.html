@@ -1,0 +1,14 @@
+<div class="page">
+    <form (ngSubmit)="onFormSubmit($event)">
+        <div class="wrap-center"><h2>Login</h2></div>
+        <div class="container form-control">
+        <label for="email">Email</label>
+        <input type="email" id="email" required [(ngModel)]="loginData.email" name="email" >
+        <label for="password">Password</label>
+        <input type="password" id="password" required [(ngModel)]="loginData.password" name="password">
+        <div class="wrap">
+         <button class="btn" type="submit">Submit</button>
+        </div>
+        </div>
+</form>
+</div>
