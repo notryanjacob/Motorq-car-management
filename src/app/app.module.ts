@@ -13,6 +13,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AddUrlComponent } from './components/add-url/add-url.component';
+import { DriverCreationComponent } from './components/driver-creation/driver-creation.component';
+import { DriverComponent } from './components/driver/driver.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { AddUrlComponent } from './components/add-url/add-url.component';
     UnusedItemsComponent,
     LoginComponent,
     AddUrlComponent,
+    DriverCreationComponent,
+    DriverComponent,
     ],
   imports: [
     BrowserModule,

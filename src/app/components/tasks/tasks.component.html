@@ -1,12 +1,18 @@
-<div class="duration-buttons">
+
+
+<app-driver-creation></app-driver-creation>
+
+
+
+<!-- <div class="duration-buttons">
     <div class="btn" [class.selected]="selectedButton === 'All Time'" (click)="selectButton('All Time')">All Time</div>
     <div class="btn" [class.selected]="selectedButton === 'Today'" (click)="selectButton('Today')">Today</div>
     <div class="btn" [class.selected]="selectedButton === 'This Month'" (click)="selectButton('This Month')">This Month</div>
     <div class="btn" [class.selected]="selectedButton === 'This Year'" (click)="selectButton('This Year')">This Year</div>
     <div class="btn" [class.selected]="selectedButton === 'Custom'" (click)="selectButton('Custom')">Custom</div>
-  </div>
+  </div> -->
 
-<div class="wrap">
+<!-- <div class="wrap">
 <div *ngIf="showMoreButtonVisible" class="show-more" (click)="toggleShowMore()">
     {{showMore ? 'Show less' : 'Show more'  }}
     <fa-icon [icon]="showMore ? faAngleUp : faAngleDown"></fa-icon>
@@ -16,11 +22,10 @@
     <app-task-item *ngFor="let task of visibleTasks" [task]="task">
     </app-task-item>
 </div>
-<!-- <div>Hello <fa-icon [icon]="faAngleDown"></fa-icon></div> -->
 <div class="chart-items">
     <app-bar-chart [data]="tasks"></app-bar-chart>
     <app-unused-items [selectedButton]="selectedButton"></app-unused-items>
 </div>
 <div class="add-tab">
     <app-add-url></app-add-url>
-</div>
+</div> -->

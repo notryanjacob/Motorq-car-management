@@ -1,0 +1,27 @@
+
+<div class="driver-list">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let driver of drivers">
+          <td>{{ driver.name }}</td>
+          <td>{{ driver.email }}</td>
+          <td>{{ driver.phoneNumber }}</td>
+          <td>{{ driver.location }}</td>
+          <td>
+            <button mat-raised-button color="primary" class="btn" (click)="acceptAssignment(driver)">Accept</button>
+            <button mat-raised-button color="warn" class ="btn" (click)="rejectAssignment(driver)">Reject</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

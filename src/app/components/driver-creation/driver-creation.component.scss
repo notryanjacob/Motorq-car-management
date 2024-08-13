@@ -1,0 +1,66 @@
+// .page {
+//     display: flex; /* Center the content horizontally */
+//     justify-content: center;
+//     align-items: center;
+//     min-height: 100vh; /* Set minimum height for full viewport */
+//     background-color: #f0f0f0; /* Light gray background */
+//     font-family: sans-serif; /* Basic font family */
+//   }
+.page{
+  margin-left: 30px;
+}
+  .driver-search{
+    margin: 30px;
+  }
+  /* Styles for the form container */
+  .container.form-control {
+    background-color: #fff; /* White background for the form */
+    border-radius: 5px; /* Rounded corners */
+    padding: 20px; /* Padding for spacing */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Styles for the form heading */
+  .wrap-center {
+    text-align: left; /* Center the heading text */
+    margin-bottom: 20px; /* Space below the heading */
+    margin-top: 20px;
+  }
+  
+  .wrap-center h2 {
+    font-size: 24px; /* Heading font size */
+    margin: 0; /* Remove default margin */
+  }
+  
+  /* Styles for form labels */
+  label {
+    display: block; /* Display labels on their own line */
+    margin-bottom: 5px; /* Space below labels */
+    font-weight: bold; /* Bold text for labels */
+  }
+  
+  /* Styles for form inputs */
+  input {
+    width: 30%; /* Full width for inputs */
+    padding: 10px; /* Padding for spacing */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 16px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width calculation */
+    font-size: 16px; /* Input font size */
+  }
+  
+  /* Styles for the submit button */
+  .btn {
+    background-color: #5f9ea0 ; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for button size */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Indicate clickable button */
+    font-size: 16px; /* Button font size */
+    transition: 0.3s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .btn:hover {
+    background-color: #3e8e41; /* Darker green on hover */
+  }

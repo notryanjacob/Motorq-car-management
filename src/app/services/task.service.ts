@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Task } from '../Task';
 
@@ -7,10 +7,45 @@ import { Task } from '../Task';
   providedIn: 'root'
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:8080/api/visits';
+  private baseUrl = 'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 
+  addDriver(driver: any) : Observable<any>{
+    return this.http.post(this.baseUrl + '/driver',driver);
+  }
+
+  assignVehicle(va:any) : Observable<any>{
+    return this.http.post(this.baseUrl+'/assignVehicle', va);
+  }
+  // assignVehicle(name: string, licensePlate: string, startTime: number, endTime: number): Observable<any> {
+  //   const url = `${this.baseUrl}/assignVehicle`;
+  //   const params = new HttpParams()
+  //     .set('name', name)
+  //     .set('licensePlate', licensePlate)
+  //     .set('startTime', startTime.toString())
+  //     .set('endTime', endTime.toString());
+  //   return this.http.post(url, null, { params });
+  // }
+
+  unassignVehicle(name: string): Observable<any> {
+    const url = `${this.baseUrl}/unassignVehicle/${name}`;
+    return this.http.post(url, null);
+  }
+
+  getDriverByName(name: String) : Observable<any>{
+    return this.http.get(this.baseUrl+`/driver/findName/${name}`);
+  }
+  getDriverByNumber(number: String) : Observable<any>{
+    return this.http.get(this.baseUrl+`/driver/findNumber/${number}`);
+  }
+
+
+
+
+
+
+  apiUrl: String ="";
   getTasksToday(): Observable<Task[]>{
     return this.http.get<Task[]>(this.apiUrl+'/durationd');
   }

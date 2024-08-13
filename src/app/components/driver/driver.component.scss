@@ -1,0 +1,63 @@
+.driver-list {
+    max-width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  button {
+    margin-right: 5px;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  button.primary {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+  }
+  
+  button.warn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+  }
+  
+  button.primary:hover {
+    background-color: #45a049;
+  }
+  
+  button.warn:hover {
+    background-color: #d32f2f;
+  }
+  

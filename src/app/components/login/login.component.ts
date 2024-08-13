@@ -24,7 +24,7 @@ constructor(private router: Router, private dataService : DataService){}
 
   onFormSubmit(event:Event):void{
     event.preventDefault();
-    let authEmail="admin@upl-ltd.com";
+    let authEmail="admin";
     let authPassword="123";
     if(this.loginData.email && this.loginData.email === authEmail 
       && this.loginData.password && this.loginData.password === authPassword){
